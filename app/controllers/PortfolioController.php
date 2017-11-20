@@ -1,15 +1,14 @@
 <?php
 
-class IndexController extends ControllerBase
+class PortfolioController extends ControllerBase
 {
     public function initialize()
     {
-        $this->tag->setTitle('Welcome');
+        $this->tag->setTitle('Portfolio');
         parent::initialize();
     }
 
     public function indexAction()
     {
-
     }
 }

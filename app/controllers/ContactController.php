@@ -9,7 +9,7 @@ class ContactController extends ControllerBase
 {
     public function initialize()
     {
-        $this->tag->setTitle('Contact us');
+        $this->tag->setTitle('Contact Me');
         parent::initialize();
     }
 
@@ -24,7 +24,7 @@ class ContactController extends ControllerBase
     public function sendAction()
     {
         if ($this->request->isPost() != true) {
-            return $this->dispatcher->forward(
+            $this->dispatcher->forward(
                 [
                     "controller" => "contact",
                     "action"     => "index",
@@ -42,7 +42,7 @@ class ContactController extends ControllerBase
                 $this->flash->error($message);
             }
 
-            return $this->dispatcher->forward(
+            $this->dispatcher->forward(
                 [
                     "controller" => "contact",
                     "action"     => "index",
@@ -55,7 +55,7 @@ class ContactController extends ControllerBase
                 $this->flash->error($message);
             }
 
-            return $this->dispatcher->forward(
+            $this->dispatcher->forward(
                 [
                     "controller" => "contact",
                     "action"     => "index",
@@ -65,7 +65,7 @@ class ContactController extends ControllerBase
 
         $this->flash->success('Thanks, we will contact you in the next few hours');
 
-        return $this->dispatcher->forward(
+        $this->dispatcher->forward(
             [
                 "controller" => "index",
                 "action"     => "index",

@@ -16,52 +16,24 @@ class Elements extends Component
                 'caption' => 'Home',
                 'action' => 'index'
             ),
-            'invoices' => array(
-                'caption' => 'Invoices',
-                'action' => 'index'
-            ),
             'about' => array(
-                'caption' => 'About',
+                'caption' => 'About me',
                 'action' => 'index'
             ),
-            'contact' => array(
-                'caption' => 'Contact',
+            'education' => array(
+                'caption' => 'Education',
+                'action' => 'index'
+            ),
+            'portfolio' => array(
+                'caption' => 'Portfolio',
                 'action' => 'index'
             ),
         ),
         'navbar-right' => array(
-            'session' => array(
-                'caption' => 'Log In/Sign Up',
+            'contact' => array(
+                'caption' => 'Contact me',
                 'action' => 'index'
             ),
-        )
-    );
-
-    private $_tabs = array(
-        'Invoices' => array(
-            'controller' => 'invoices',
-            'action' => 'index',
-            'any' => false
-        ),
-        'Companies' => array(
-            'controller' => 'companies',
-            'action' => 'index',
-            'any' => true
-        ),
-        'Products' => array(
-            'controller' => 'products',
-            'action' => 'index',
-            'any' => true
-        ),
-        'Product Types' => array(
-            'controller' => 'producttypes',
-            'action' => 'index',
-            'any' => true
-        ),
-        'Your Profile' => array(
-            'controller' => 'invoices',
-            'action' => 'profile',
-            'any' => false
         )
     );
 
@@ -72,16 +44,6 @@ class Elements extends Component
      */
     public function getMenu()
     {
-
-        $auth = $this->session->get('auth');
-        if ($auth) {
-            $this->_headerMenu['navbar-right']['session'] = array(
-                'caption' => 'Log Out',
-                'action' => 'end'
-            );
-        } else {
-            unset($this->_headerMenu['navbar-left']['invoices']);
-        }
 
         $controllerName = $this->view->getControllerName();
         foreach ($this->_headerMenu as $position => $menu) {
@@ -100,24 +62,5 @@ class Elements extends Component
             echo '</div>';
         }
 
-    }
-
-    /**
-     * Returns menu tabs
-     */
-    public function getTabs()
-    {
-        $controllerName = $this->view->getControllerName();
-        $actionName = $this->view->getActionName();
-        echo '<ul class="nav nav-tabs">';
-        foreach ($this->_tabs as $caption => $option) {
-            if ($option['controller'] == $controllerName && ($option['action'] == $actionName || $option['any'])) {
-                echo '<li class="active">';
-            } else {
-                echo '<li>';
-            }
-            echo $this->tag->linkTo($option['controller'] . '/' . $option['action'], $caption), '</li>';
-        }
-        echo '</ul>';
     }
 }

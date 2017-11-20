@@ -2,23 +2,29 @@
 {{ content() }}
 
 <div class="jumbotron">
-    <h1>Welcome to INVO</h1>
-    <p>INVO is a revolutionary application to create invoices online for free.
-    Receive online payments from your clients and improve your cash flow</p>
-    <p>{{ link_to('register', 'Try it for Free &raquo;', 'class': 'btn btn-primary btn-large btn-success') }}</p>
+    <h1>Reis Hopkins</h1>
+    <p>I'm a web developer that recently graduated with degree in Computer Science with a minor in Mathematics.
+        I'm looking to make a name for myself building web applications that can be used as a platform for delivering entertainment. </p>
+    <p>{{ link_to('contact', 'Contact Me', 'class': 'btn btn-primary btn-large btn-success') }}</p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Manage Invoices Online</h2>
-        <p>Create, track and export your invoices online. Automate recurring invoices and design your own invoice using our invoice template and brand it with your business logo. </p>
+        <h2>Developing Experience</h2>
+        <p>I've spent the last several years studying computer science and delivering tools to instructors and other clients across K-State University.
+            {{ link_to('register', "Learn more about my work here. &raquo;") }} </p>
     </div>
+
     <div class="col-md-4">
-        <h2>Dashboards And Reports</h2>
-        <p>Gain critical insights into how your business is doing. See what sells most, who are your top paying customers and the average time your customers take to pay.</p>
+        <h2>Depth And Breadth</h2>
+        <p>I fenced for 4 years using 2 different blade styles. I spent 2 years competing in Dota 2 tournaments. I almost became a film student.
+        {{ link_to('register', "Checkout my extensive skill set and how it compliments my work in computer science. &raquo;") }}</p>
     </div>
+
     <div class="col-md-4">
-        <h2>Invite, Share And Collaborate</h2>
-        <p>Invite users and share your workload as invoice supports multiple users with different permissions. It helps your business to be more productive and efficient. </p>
+        <h2>Growing and Leading</h2>
+        <p>Within my first 5 months as a developer for K-State, I was leading several projects that allowed me to develop my communication and leadership skills.
+            {{ link_to('about', "Here's an overview of the positions I've held and how I've grown through each one. &raquo;") }}</p>
     </div>
+
 </div>

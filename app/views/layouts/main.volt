@@ -7,7 +7,6 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">INVO</a>
         </div>
         {{ elements.getMenu() }}
     </div>
@@ -17,7 +16,5 @@
     {{ flash.output() }}
     {{ content() }}
     <hr>
-    <footer>
-        <p>&copy; Company 2015</p>
-    </footer>
+
 </div>
